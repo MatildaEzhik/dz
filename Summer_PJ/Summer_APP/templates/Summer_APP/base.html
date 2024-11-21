@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Everlasting Summer{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="{% url 'creation_story' %}">История создания</a></li>
+            <li><a href="{% url 'characters' %}">Персонажи</a></li>
+            <li><a href="{% url 'background_images' %}">Фоновые изображения</a></li>
+            <li><a href="{% url 'music_player' %}">MP3 плеер</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
